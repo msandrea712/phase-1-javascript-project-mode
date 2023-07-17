@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(226, 226, 25);
+}
+
+h1 {
+    color: rgb(8, 7, 7);
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+.center-image {
+    text-align: center;
+}

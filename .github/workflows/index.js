@@ -11,6 +11,5 @@ searchButton.addEventListener("click",getPokemon)
  .then(function(data){
     unorderedList.innerText=data.name
  })
-
 }
 

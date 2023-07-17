@@ -1,21 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Pokémon Catching Game</title>
+    <style>
+        .pokemon-img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    
 </head>
+
 <body>
-    <h1 id="header"></h1>
-    <h2 id="pokeName"></h2>
+    <h1>Pokémon Catching Game</h1>
+    <div id="game-container">
+        <h2 id="pokemon-name"></h2>
+        <img id="pokemon-image" class="pokemon-img" src="" alt="Pokémon Image">
+        <button id="catch-button">Catch Pokémon</button>
+    </div>
 
-    <input type="number" id="pokeId">
-    <button id="searchButton" max="151">Search</button>
+    <script>
+        const gameContainer = document.getElementById("game-container");
+        const pokemonNameElement = document.getElementById("pokemon-name");
+        const pokemonImageElement = document.getElementById("pokemon-image");
+        const catchButton = document.getElementById("catch-button");
 
-    <div id="spritesContainer"></div>
-    <ul id="typeList"></ul>
-    <ul id="moveList"></ul>
-    <script src="./index.js"></script>
+        function getRandomPokemon() {
+            const apiUrl = "https://pokeapi.co/api/v2/pokemon?limit=1000";
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const pokemons = data.results;
+                    const randomPokemon = pokemons[Math.floor(Math.random() * pokemons.length)];
+                    const pokemonName = randomPokemon.name;
+                    getPokemonDetails(pokemonName);
+                })
+                .catch(error => {
+                    console.log("Failed to fetch data from the API.", error);
+                });
+        }
+
+        function getPokemonDetails(pokemonName) {
+            const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonName}`;
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const pokemonSprite = data.sprites.front_default;
+                    displayPokemon(pokemonName, pokemonSprite);
+                })
+                .catch(error => {
+                    console.log("Failed to fetch Pokémon details.", error);
+                });
+        }
+
+        function displayPokemon(pokemonName, pokemonSprite) {
+            pokemonNameElement.textContent = pokemonName.toUpperCase();
+            pokemonImageElement.src = pokemonSprite;
+        }
+
+        function catchPokemon() {
+            const caughtPokemonName = pokemonNameElement.textContent.toLowerCase();
+            alert(`You caught ${caughtPokemonName}!`);
+            resetGame();
+        }
+
+        function resetGame() {
+            pokemonNameElement.textContent = "";
+            pokemonImageElement.src = "";
+            getRandomPokemon();
+        }
+
+        catchButton.addEventListener("click", catchPokemon);
+
+        
+        getRandomPokemon();
+    </script>
 </body>
 </html>
+
