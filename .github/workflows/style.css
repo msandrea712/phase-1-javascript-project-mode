@@ -1,16 +1,32 @@
 body {
-    background-color: rgb(226, 226, 25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
 }
 
-h1 {
-    color: rgb(8, 7, 7);
-    text-align: center;
+.container {
+    position: relative;
 }
 
-p {
-    font-family: verdana;
-    font-size: 20px;
+img {
+    position: absolute;
+    cursor: pointer;
 }
-.center-image {
-    text-align: center;
+
+#barbie {
+    width: 300px;
 }
+
+#dress {
+    top: 40px;
+    left: 50px;
+}
+
+#shoes {
+    bottom: 0;
+    left: 60px;
+}
+
+/* Add more CSS styles for additional clothing items */
