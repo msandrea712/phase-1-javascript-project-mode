@@ -1,53 +1,39 @@
-Pokémon Catching Game
+Tic Tac Toe Game
 
-This is a simple web-based game where players can catch random Pokémon. The game fetches Pokémon data from the PokeAPI and displays the name and image of a random Pokémon. The player can click the "Catch Pokémon" button to catch the displayed Pokémon and receive a notification. The game then resets, showing a new random Pokémon for the player to catch.
+This is a simple Tic Tac Toe game built using HTML, CSS, and JavaScript. It allows two players to take turns and try to get three in a row horizontally, vertically, or diagonally.
 
-Technologies Used
+How to Play
 
-HTML
-CSS
-JavaScript
-Setup Instructions
+Open the "index.html" file in your web browser.
+The game will display a 3x3 grid representing the Tic Tac Toe board.
+The first player's symbol is "X," and the second player's symbol is "O."
+Players take turns clicking on an empty cell to make their move.
+The first player to get three of their symbols in a row wins the game.
+If all cells are filled, and no player has won, the game will end in a tie.
+Game Rules
 
-To run the Pokémon Catching Game locally, follow these steps:
+A player cannot make a move in a cell that is already occupied.
+The game will automatically detect a win or a tie and display an alert message.
+To start a new game, simply refresh the web page.
+File Structure
 
-Clone the repository or download the source code.
-Open the index.html file in a web browser.
-Note: An internet connection is required to fetch Pokémon data from the PokeAPI.
+The game consists of the following files:
 
-Game Instructions
+index.html: The main HTML file containing the game's layout and grid.
+styles.css: The CSS file providing styles and layout for the game board.
+script.js: The JavaScript file containing the game logic and interactivity.
+Getting Started
 
-When the game loads, the name and image of a random Pokémon will be displayed.
-Click the "Catch Pokémon" button to catch the Pokémon.
-An alert will show up, informing you of the caught Pokémon's name.
-The game will reset, and a new random Pokémon will be displayed for the next catch.
-Code Overview
+You can clone this repository to your local machine using the following command:
 
-The code is structured as follows:
+bash
+Copy code
+git clone https://github.com/your-username/tic-tac-toe.git
+Compatibility
 
-The HTML file (index.html) defines the basic structure of the game and includes the necessary elements and styling.
-The CSS file (style.css) contains additional styling rules for the game interface.
-The JavaScript code embedded within the HTML file handles the game logic.
-It fetches a random Pokémon from the PokeAPI using fetch and displays its name and image.
-When the player catches a Pokémon, an alert is shown, and the game is reset to fetch a new random Pokémon.
-External Dependencies
-
-PokeAPI: The game fetches Pokémon data from this API.
-Future Improvements
-
-Here are some potential improvements that could be made to the Pokémon Catching Game:
-
-Implement a scoring system to track the number of Pokémon caught.
-Add animations or effects when a Pokémon is caught.
-Include sound effects or background music to enhance the gaming experience.
-Allow players to choose specific generations or types of Pokémon to catch.
-Implement a timer or time limit for catching Pokémon.
-Feel free to explore, modify, and enhance the game based on your preferences and creative ideas.
-
-Credits
-
-The Pokémon Catching Game was created by [Your Name]. The code is based on the Pokémon franchise owned by The Pokémon Company. The game utilizes the PokeAPI for fetching Pokémon data.
+The Tic Tac Toe game should work on modern web browsers such as Google Chrome, Mozilla Firefox, Microsoft Edge, and Safari.
 
 License
 
 This project is licensed under the MIT License.
+
