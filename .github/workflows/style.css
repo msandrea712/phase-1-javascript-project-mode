@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f5f5f5;
+    background-color: #b922ac5b;
 }
 
 h1 {
@@ -20,7 +20,7 @@ h1 {
 .cell {
     width: 100px;
     height: 100px;
-    background-color: #fff;
+    background-color: #040202d0;
     display: flex;
     justify-content: center;
     align-items: center;
